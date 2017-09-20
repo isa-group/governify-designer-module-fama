@@ -5,14 +5,18 @@ const request = require('request');
 const fs = require('fs');
 const path = require('path');
 
-const FaMaTools = require("E:\\Documents\\Coding\\FaMa\\governify-fama-tools\\index.js");
+const FaMaTools = require("governify-fama-tools");
 const Reasoner = FaMaTools.Reasoner;
 
 module.exports = {
 
-    products: function (res, data, parameters) {
-        res.send(new responseModel('OK', "hello world", data, null));
-    },
+    /**
+     * Future implementation
+     */
+    //  products: function (res, data, parameters) {
+    //     res.send(new responseModel('OK', "No operation ", data, null));
+    // },
+
     executeDocument: function (res, data, parameters) {
         var famaDocument = data[0].content;
 
@@ -31,7 +35,7 @@ module.exports = {
                     document: document
                 });
             } else {
-                res.send(new responseModel('OK', getResponseModelCSP(stdout), data, null));
+                res.send(new responseModel('OK', buildResponse(stdout), data, null));
             }
         });
 
@@ -65,6 +69,6 @@ function annotation(type, row, column, text) {
     this.text = text;
 }
 
-let getResponseModelCSP = (stdout) => {
+let buildResponse = (stdout) => {
     return '<pre>' + stdout + '</pre>';
 };
