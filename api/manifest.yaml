@@ -10,18 +10,18 @@ models:
     syntaxes:
       - id: fma
         readOnly: false
-        editorModeId: ace/mode/yaml
-        editorModeURI: mode-yaml.js
-        editorThemeId: ace/theme/yaml
-        editorThemeURI: theme-yaml.js
+        editorModeId: ace/mode/xml
+        editorModeURI: mode-xml.js
+        editorThemeId: ace/theme/chrome
+        editorThemeURI: theme-chrome.js
         syntaxCheck: false
         consistencyCheck: false
     operations:
+      # - id: products
+      #   name: Product
+      #   description: Execute FaMa.
+      #   type: simple
       - id: executeDocument
         name: Execute
-        description: Execute FaMa.
-        type: simple
-      - id: products
-        name: Product
         description: Execute FaMa.
         type: simple
