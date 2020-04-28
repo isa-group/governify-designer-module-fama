@@ -1,4 +1,4 @@
-# Governify Desginer Module Fama
+# Governify Designer Module Fama
 
 Designer Module FAMA is a component of the governify ecosystem for storing and analyzing Service Level Agreements (SLA)
 
